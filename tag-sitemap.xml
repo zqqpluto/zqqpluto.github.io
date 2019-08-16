@@ -3,7 +3,21 @@
 
     <url>
         <loc>http://www.huweihuang.com/tags/Hexo/</loc>
-        <lastmod>2019-08-16T02:26:17.468Z</lastmod>
+        <lastmod>2019-08-16T03:28:11.833Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/spring/</loc>
+        <lastmod>2019-08-16T05:07:33.182Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/SSM/</loc>
+        <lastmod>2019-08-16T05:07:33.182Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
