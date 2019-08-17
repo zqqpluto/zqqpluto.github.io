@@ -30,13 +30,6 @@
     </url>
 
     <url>
-        <loc>http://www.huweihuang.com/tags/hexo/</loc>
-        <lastmod>2019-08-17T04:32:29.787Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.huweihuang.com/tags/spring/</loc>
         <lastmod>2019-08-17T04:52:53.915Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -81,6 +74,27 @@
     <url>
         <loc>http://www.huweihuang.com/tags/%E7%88%AC%E8%99%AB/</loc>
         <lastmod>2019-08-17T04:59:33.653Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/hexo/</loc>
+        <lastmod>2019-08-17T08:46:32.669Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/Valine/</loc>
+        <lastmod>2019-08-17T08:46:32.669Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.huweihuang.com/tags/BeanTech/</loc>
+        <lastmod>2019-08-17T08:46:32.669Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          hexo+BeanTech主题增加站点访问量和文章访问量 - 赵先生
+          hexo+BeanTexh+Valine实现评论功能 - 赵先生
         
     </title>
 
-    <link rel="canonical" href="http://www.huweihuang.com/article/hexo-BeanTech/">
+    <link rel="canonical" href="http://www.huweihuang.com/article/hexo评论/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -91,9 +91,15 @@
                             <a class="tag" href="/tags/#hexo"
                                 title="hexo">hexo</a>
                             
+                            <a class="tag" href="/tags/#Valine"
+                                title="Valine">Valine</a>
+                            
+                            <a class="tag" href="/tags/#BeanTech"
+                                title="BeanTech">BeanTech</a>
+                            
                         </div>
-                        <h1>hexo+BeanTech主题增加站点访问量和文章访问量</h1>
-                        <h2 class="subheading">BeanTech添加访问量</h2>
+                        <h1>hexo+BeanTexh+Valine实现评论功能</h1>
+                        <h2 class="subheading">Valine留言</h2>
                         <span class="meta"  id="busuanzi_container_page_pv" >
                             Posted by 赵先生 on
                             2019-08-17   
@@ -217,28 +223,41 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <ol>
+                <blockquote>
+<p>基于hexo的主题BeanTech的Valine评论功能实现。</p>
+</blockquote>
+<ol>
 <li>
-<p><strong>配置是否开启不蒜子访问量统计功能</strong></p>
-<p>在<code>themes/yilia/_config.yml</code>添加属性</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 是否开启访问量统计功能(不蒜子)</span></span><br><span class="line"><span class="attr">busuanzi:</span></span><br><span class="line"><span class="attr"> enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p><strong>Leancloud配置</strong></p>
+<p>首先访问Leancloud官网<code>https://leancloud.cn/</code>有Github账号的小伙伴可以用Github账号进行登陆然后绑定邮箱就可以啦！<br>
+进入之后点击创建应用</p>
+<p><img src="./1417438-20180829183719819-1803830937.png" alt=""></p>
+<p><strong>进入应用-&gt;设置-&gt;应用key</strong></p>
+<p><img src="./1417438-20180829183737375-2083035798.png" alt=""></p>
 </li>
 <li>
-<h5 id="引入不蒜子并添加站点访问量">引入不蒜子并添加站点访问量</h5>
-<p>在<code>themes/yilia/layout/_partial/footer.ejs</code>合适位置添加如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.busuanzi &amp;&amp; theme.busuanzi.enable)&#123; %&gt;</span><br><span class="line">	&lt;!-- 不蒜子统计 --&gt;</span><br><span class="line">	&lt;span id=&quot;busuanzi_container_site_uv&quot; style=&apos;display:none&apos;&gt;</span><br><span class="line">		本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人</span><br><span class="line">	&lt;/span&gt;</span><br><span class="line">	&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="../spring-spring/Snipaste_2019-08-17_12-20-02.png" alt=""></p>
-<p><img src="../spring-spring/Snipaste_2019-08-17_12-23-27.png" alt=""></p>
+<p><strong>下载Valine.min.js</strong></p>
+<p>首先下载最新的<code>Valine.min.js</code>核心代码库到本地（下面是链接）<br>
+<code>https://cdn.jsdelivr.net/npm/valine@1.1.9-beta9/dist/</code><br>
+右击<code>Valine.min.js</code>选择链接另存为即可,我这里将其放在<code>主题\source\js</code>下面的。</p>
 </li>
 <li>
-<p>添加文章访问量</p>
-<p>在文件<code>themes/yilia/layout/_partial/header.ejs</code>合适位置添加代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_page_pv"</span>&gt;</span></span><br><span class="line">  本文总阅读量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_page_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>我这里是在原来到标签内部作了改动，只要id一致就不会有问题。</p>
-<p><img src="../spring-spring/Snipaste_2019-08-17_12-29-21.png" alt=""></p>
-<p>效果如下图：</p>
-<p><img src="../spring-spring/Snipaste_2019-08-17_12-30-56.png" alt=""></p>
+<p><strong>留言的配置</strong></p>
 </li>
+</ol>
+<p>在<code>thems\你的主题\layout\_partial\footer.ejs</code>下面添加到合适位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (is_post()) &#123; %&gt;</span><br><span class="line">                &lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">                &lt;!--Valine 的核心代码库:--&gt;</span><br><span class="line">                &lt;script src=&quot;../../js/Valine.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">                &lt;div class=&quot;comment&quot;&gt;&lt;/div&gt;</span><br><span class="line">                &lt;script&gt;</span><br><span class="line">                    new Valine(&#123;</span><br><span class="line">                        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)</span><br><span class="line">                        av: AV,</span><br><span class="line">                        el: &apos;.comment&apos;, // </span><br><span class="line">                        notify: true, // 邮件提醒!!!</span><br><span class="line">                        verify: true, // 验证码</span><br><span class="line">                        app_id: &apos;xxxxxx&apos;, // 这里填写上面得到的APP ID</span><br><span class="line">                        app_key: &apos;xxxxxxx&apos;, // 这里填写上面得到的APP KEY</span><br><span class="line">                        placeholder: &apos;欢迎留言评论&apos; // [v1.0.7 new]留言框占位提示文字</span><br><span class="line">                    &#125;);</span><br><span class="line">                &lt;/script&gt;</span><br><span class="line">                &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>&lt;% if (is_post()) { %&gt;  &lt;% } %&gt;表示是否在文章页面的判断，不是则不会显示评论框。</p>
+</blockquote>
+<ol start="4">
+<li>
+<p><strong>开启邮箱验证</strong></p>
+<p>进入<code>Leancloud</code>&gt;选择你的评论所存放的<code>应用</code>&gt;设置&gt;<code>邮件模板</code>，按下图设置好<code>用于重置密码的邮件主题</code>&gt;然后<code>保存</code>:</p>
+<blockquote>
+<p><strong>注</strong>：请注意修改链接为你的<code>博客</code>或者<code>网站首页</code>。</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hi, &#123;&#123;username&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">你在 &#123;&#123;appname&#125;&#125; 的评论收到了新的回复，请点击查看：</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"你的网址首页链接"</span> <span class="attr">style</span>=<span class="string">"display: inline-block; padding: 10px 20px; border-radius: 4px; background-color: #3090e4; color: #fff; text-decoration: none;"</span>&gt;</span>马上查看<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 
                 
@@ -247,13 +266,9 @@
                 <!-- Pager -->
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/article/hexo评论/" data-toggle="tooltip" data-placement="top" title="hexo+BeanTexh+Valine实现评论功能">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/article/2019-08-16-手动安装MySQL和彻底删除MySQL/" data-toggle="tooltip" data-placement="top" title="手动安装MySQL和彻底删除MySQL">Next Post &rarr;</a>
+                            <a href="/article/hexo-BeanTech/" data-toggle="tooltip" data-placement="top" title="hexo+BeanTech主题增加站点访问量和文章访问量">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -309,7 +324,7 @@
         <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#引入不蒜子并添加站点访问量"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5F15;&#x5165;&#x4E0D;&#x849C;&#x5B50;&#x5E76;&#x6DFB;&#x52A0;&#x7AD9;&#x70B9;&#x8BBF;&#x95EE;&#x91CF;</span></a></li></ol>
+          <ol class="nav">none</ol>
         
         </div>
       </aside>
@@ -330,6 +345,10 @@
                     <div class="tags">
                        
                           <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
+                        
+                          <a class="tag" href="/tags/#Valine" title="Valine">Valine</a>
+                        
+                          <a class="tag" href="/tags/#BeanTech" title="BeanTech">BeanTech</a>
                         
                     </div>
                 </section>
