@@ -446,34 +446,59 @@ sc delete mysql //这里的mysql是你要删除的服务名 这里需要你使�
 <footer>
     <div class="container">
         <div class="row">
+
+
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+                
+                <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                <!--Valine 的核心代码库:-->
+                <script src="../../js/Valine.min.js"></script>
+
+                <div class="comment"></div>
+                <script>
+                    new Valine({
+                        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+                        av: AV,
+                        el: '.comment', // 
+                        app_id: 'aPeCQXmvnRjGpLqsHsTQ38nT-gzGzoHsz', // 这里填写上面得到的APP ID
+                        app_key: 'ou0HF5y2Gu9oPP28sFN3ndGt', // 这里填写上面得到的APP KEY
+                        placeholder: '欢迎留言评论' // [v1.0.7 new]留言框占位提示文字
+                    });
+                </script>
+                
+
+
+    
                 <ul class="list-inline text-center">
                     
-                    
-                    
+                
+                
 
-                    
+                
 
-                    
+                
 
-                    
-                    <li>
-                        <a target="_blank" href="https://github.com/huweihuang">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
+                
+                <li>
+                    <a target="_blank" href="https://github.com/huweihuang">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
 
-                    
+                
 
                 </ul>
 
 
                 <p class="copyright text-muted">
-                    
+
                     
                     <!-- 不蒜子统计 -->
                     <span id="busuanzi_container_site_uv" style='display:none'>
