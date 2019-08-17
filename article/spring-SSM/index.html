@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <title>
+        
+          SSM框架学习（一）————SSM框架简介 - 赵先生
+        
+    </title>
+
+    <link rel="canonical" href="http://www.huweihuang.com/article/spring-SSM/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS --> 
+    <link rel="stylesheet" href="/css/beantech.min.css">
+
+    <link rel="stylesheet" href="/css/donate.css">
+    
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <link rel="stylesheet" href="/css/widget.css">
+
+    <link rel="stylesheet" href="/css/rocket.css">
+
+    <link rel="stylesheet" href="/css/signature.css">
+
+    <link rel="stylesheet" href="/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/article_header/article_header.png')
+                /*post*/
+                
+    }
+
+    
+</style>
+
+<header class="intro-header">
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                            <a class="tag" href="/tags/#spring"
+                                title="spring">spring</a>
+                            
+                            <a class="tag" href="/tags/#SSM"
+                                title="SSM">SSM</a>
+                            
+                        </div>
+                        <h1>SSM框架学习（一）————SSM框架简介</h1>
+                        <h2 class="subheading">SSM框架简介</h2>
+                        <span class="meta"  id="busuanzi_container_page_pv" >
+                            Posted by 赵先生 on
+                            2019-08-16   
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+                        </span>
+
+                       
+
+                    </div>
+                    
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">赵先生</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Modify by Yu-Hsuan Yen -->
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>java这是SSM框架简介</p>
+</blockquote>
+<h1 id="一ssm-框架简介">一.SSM 框架简介</h1>
+<p>SSM（Spring+SpringMVC+MyBatis）框架由 Spring、MyBatis 两个框架整合完成（SpringMVC 是 Spring 中的部分内容）。采用标准 MVC 模式。</p>
+<blockquote>
+<p><strong>spring MVC</strong>：负责请求的转发和视图管理。</p>
+<p><strong>spring</strong> ：实现业务对象管理。</p>
+<p><strong>mybatis</strong> ：作为数据对象的持久化引擎。</p>
+</blockquote>
+<h2 id="11-spring">1.1 Spring</h2>
+<blockquote>
+<ol>
+<li>Spring 一个开源的，用来简化企业级应用开发的应用开发框架。</li>
+<li>使用 Spring 的目的：spring 的本质是管理软件的对象，即如创建对象和维护对象之间的关系。</li>
+<li>Spring 的核心思想是 IOC（控制反转）和 AOP(面向切面编程)，即不再需要程序员去显式地<code>new</code>一个对象，而是让 Spring 框架帮你来完成这一切。</li>
+</ol>
+</blockquote>
+<h2 id="12-springmvc">1.2 SpringMVC</h2>
+<p>Spring MVC 属于 Spring Framework 的后续产品，已经融合在 Spring Web Flow 里面，它原生支持的 Spring 特性，让开发变得非常简单规范。</p>
+<blockquote>
+<ol>
+<li>spring MVC：是一个基于 MVC 架构，简化的 web 应用程序开发的框架(属于 Spring 框架的一部分),通过实现 Model(模型)-View（视图）-Controller（控制器）模式来很好地将数据、业务与展现进行分离。负责请求的转发和视图管理。</li>
+<li>Spring MVC 可以帮助我们进行更简洁的 Web 层的开发，并且它天生与 Spring 框架集成。</li>
+<li>Spring MVC 下我们一般把后端项目分为 Service 层（业务处理）、Dao 层（数据库操作）、Entity（也可以叫 pojo）层（实体类）、Controller（也可以叫 web）层(控制层，返回数据给前台页面)。</li>
+</ol>
+</blockquote>
+<p>Spring 简单工作原理如下：</p>
+<blockquote>
+<p><img src="../spring-spring/20190802113953955.png" alt="img"></p>
+</blockquote>
+<h2 id="13-mybatis">1.3 MyBatis</h2>
+<p>MyBatis 是一个基于 Java 的持久层框架,MyBatis 消除了几乎所有的 JDBC 代码和参数的手工设置以及结果集的检索. MyBatis 使用简单的 XML 或注解用于配置和原始映射，将接口和 Java 的 POJOs（Plain Old Java Objects，普通的 Java 对象）映射成数据库中的记录。</p>
+<hr>
+<h1 id="二mvc-模式">二.MVC 模式</h1>
+<h2 id="21-mvc-模式">2.1 mvc 模式</h2>
+<p><a href="https://baike.baidu.com/item/MVC" target="_blank" rel="noopener">MVC</a>全名是 Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，一种软件设计典范，用一种业务逻辑、数据、界面显示分离的方法组织代码，将业务逻辑聚集到一个部件里面，在改进和个性化定制界面及用户交互的同时，不需要重新编写业务逻辑。</p>
+<blockquote>
+<ol>
+<li>M:model(模型)是指模型表示业务规则，被模型返回的数据是中立的，模型与数据格式无关，这样一个模型能为多个视图提供数据，由于应用于模型的代码只需写一次就可以被多个视图重用，所以减少了代码的重复性。</li>
+<li>V:view(视图)是指用户看到并与之交互的界面，MVC 的好处之一在于它能为应用程序处理很多不同的视图。在视图中其实没有真正的处理发生，它只是作为一种输出数据并允许用户操纵的方式。</li>
+<li>C:controller(控制器)是指控制器接受用户的输入并调用模型和视图去完成用户的需求，控制器本身不输出任何东西和做任何处理。它只是接收请求并决定调用哪个模型构件去处理请求，然后再确定用哪个视图来显示返回的数据。</li>
+</ol>
+<p>三则之间的关系如下：</p>
+<p><img src="../spring-spring/20190802140957101.png" alt="img"></p>
+</blockquote>
+<h3 id="211-mvc-应用举例">2.1.1 MVC 应用举例</h3>
+<blockquote>
+<p>最典型的 MVC 就是 jsp+servlet+javabean 模式:</p>
+<ul>
+<li>JavaBean 作为模型，既可以作为数据模型来封装业务数据，又可以作为业务逻辑模型来包含应用的业务操作。其中，数据模型用来存储或传递业务数据，而业务逻辑模型接收到控制器传过来的模型更新请求后，执行特定的业务逻辑处理，然后返回相应的执行结果。</li>
+<li>JSP 作为表现层，负责提供页面为用户展示数据，提供相应的表单（Form）来用于用户的请求，并在适当的时候（点击按钮）向控制器发出请求来请求模型进行更新。</li>
+<li>Serlvet 作为控制器，用来接收用户提交的请求，然后获取请求中的数据，将之转换为业务模型需要的数据模型，然后调用业务模型相应的业务方法进行更新，同时根据业务执行结果来选择要返回的视图。</li>
+</ul>
+</blockquote>
+<h2 id="22-ssm-和-ssh-在-mvc-模式上的区别">2.2 SSM 和 SSH 在 MVC 模式上的区别</h2>
+<blockquote>
+<p>SSH :通常指的是 Struts2 做控制器(controller)，spring 管理各层的组件，hibernate 负责持久化层。</p>
+<p>SSM :则指的是 SpringMVC 做控制器(controller)，Spring 管理各层的组件，MyBatis 负责持久化层。</p>
+<p>共同点：</p>
+<p>1.Spring 依赖注入 DI 来管理各层的组件</p>
+<p>2.使用面向切面编程 AOP 管理事物、日志、权限等。</p>
+<p>不同点：</p>
+<p>1.Struts2 和 SpringMVC 控制器(controller)控制视图和模型的交互机制的不同</p>
+<p>2.Struts2 是 Action 类级别，SpringMVC 是方法级别，更容易实现 RESTful 风格</p>
+</blockquote>
+<hr>
+<h1 id="三restful">三.RESTful</h1>
+<p>Restfule 风格是一种软件架构风格，而不是标准，只是提供了一种设计原则和约束条件。主要适用于客户端和服务器端交互的软件。是基于 http 协议实现。目的是为了提高系统的可伸缩性，降低应用之间的耦合度，方便框架分布式处理程序。基于这个风格的软件可更加的简单、更有层次，更易于实现缓存的机制。</p>
+<p>在 resultful 风格中，用户请求的 url 使用同一个 URL 而用请求方式：get/post/delete/put 等方式对请求的处理方法进行区分。这样可以在前后台分离的开发中让前端开发人员不会对请求的资源地址产生混淆，形成一个统一的接口。</p>
+<blockquote>
+<p>特点：</p>
+<ol>
+<li>每种 url 代表了一种资源。</li>
+<li>客户端和服务器之间，传递这个资源的某种表现层。</li>
+<li>客户端通过四个 http 动词，对服务器资源进行操作。实现表现层状态的转化。</li>
+</ol>
+</blockquote>
+<h2 id="31-使用规定">3.1 使用规定</h2>
+<p>在 http 协议中，四个表示操作方式的动词:GET/Post/put/Delete，他们分别对应四种基本操作。</p>
+<p><img src="../spring-spring/Snipaste_2019-08-16_16-54-21.png" alt="Snipaste_2019-08-16_16-54-21"></p>
+<h2 id="32-springmvc-实现-restful-风格">3.2 SpringMVC 实现 RESTful 风格</h2>
+<p>Spring MVc 对 resstful 应用提供了以下支持。利用@RequestMapping 指定要处理请求的 url 模板和 http 请求的动作类型。利用@PathVariable 将 url 请求模板中的变量映射到处理方法参数上。前台利用 AJAX，在客户端发出 put、delete 动作的请求。</p>
+<p>格式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(value=&quot;/&#123;id&#125;&quot;,method=RequestMethod.GET)</span><br><span class="line">@RequestMapping(value=&quot;/&#123;id&#125;&quot;,method=RequestMethod.POST)</span><br><span class="line">@RequestMapping(value=&quot;/&#123;id&#125;&quot;,method=RequestMethod.DELETE)</span><br><span class="line">@RequestMapping(value=&quot;/&#123;id&#125;&quot;,method=RequestMethod.PUT)</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(</span><br><span class="line">value=&quot;/queryQuByTypeIdAndChaID/&#123;questionTypeId&#125;/&#123;chapterId&#125;&quot;,</span><br><span class="line">method=RequestMethod.GET,</span><br><span class="line">produces=&quot;text/html;charset=UTF-8&quot;</span><br><span class="line">)</span><br><span class="line">public void queryQuByTypeIdAndChaID(</span><br><span class="line">HttpServletRequest request,</span><br><span class="line">HttpServletResponse response,</span><br><span class="line">@PathVariable String questionTypeId,</span><br><span class="line">@PathVariable String chapterId)&#123;</span><br><span class="line">//具体实现代码</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="33restful-设计的常见误区">3.3RESTful 设计的常见误区</h2>
+<p><a href="https://www.cnblogs.com/terrysun/archive/2012/12/11/2813039.html" target="_blank" rel="noopener">RESTful 常见两大误区</a></p>
+<p><a href="http://www.informit.com/articles/article.aspx?p=1566460" target="_blank" rel="noopener">RESTful 版本控制</a></p>
+
+                
+
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/article/spring-SSM整合/" data-toggle="tooltip" data-placement="top" title="SSM框架学习（六）——SSM整合">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/article/spring-SpringJDBC/" data-toggle="tooltip" data-placement="top" title="SSM框架学习（四）——SpringJDBC">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                <br>
+
+                <!--打赏-->
+                
+                <!--打赏-->
+
+                <br>
+                <!--分享-->
+                
+                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                    <!--  css & js -->
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!--分享-->
+                <br>                       
+                
+                <!-- require APlayer -->
+                
+
+                <!-- duoshuo Share start -->
+                
+                <!-- 多说 Share end-->
+
+                <!-- 多说评论框 start -->
+                
+                <!-- 多说评论框 end -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+
+                
+
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+  
+    <style>
+      span.toc-nav-number{
+        display: none
+      }
+    </style>
+  
+    
+      <aside id="sidebar">
+        <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#一ssm-框架简介"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x4E00;.SSM &#x6846;&#x67B6;&#x7B80;&#x4ECB;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#11-spring"><span class="toc-nav-number">1.1.</span> <span class="toc-nav-text">1.1 Spring</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#12-springmvc"><span class="toc-nav-number">1.2.</span> <span class="toc-nav-text">1.2 SpringMVC</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#13-mybatis"><span class="toc-nav-number">1.3.</span> <span class="toc-nav-text">1.3 MyBatis</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#二mvc-模式"><span class="toc-nav-number">2.</span> <span class="toc-nav-text">&#x4E8C;.MVC &#x6A21;&#x5F0F;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#21-mvc-模式"><span class="toc-nav-number">2.1.</span> <span class="toc-nav-text">2.1 mvc &#x6A21;&#x5F0F;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#211-mvc-应用举例"><span class="toc-nav-number">2.1.1.</span> <span class="toc-nav-text">2.1.1 MVC &#x5E94;&#x7528;&#x4E3E;&#x4F8B;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#22-ssm-和-ssh-在-mvc-模式上的区别"><span class="toc-nav-number">2.2.</span> <span class="toc-nav-text">2.2 SSM &#x548C; SSH &#x5728; MVC &#x6A21;&#x5F0F;&#x4E0A;&#x7684;&#x533A;&#x522B;</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#三restful"><span class="toc-nav-number">3.</span> <span class="toc-nav-text">&#x4E09;.RESTful</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#31-使用规定"><span class="toc-nav-number">3.1.</span> <span class="toc-nav-text">3.1 &#x4F7F;&#x7528;&#x89C4;&#x5B9A;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#32-springmvc-实现-restful-风格"><span class="toc-nav-number">3.2.</span> <span class="toc-nav-text">3.2 SpringMVC &#x5B9E;&#x73B0; RESTful &#x98CE;&#x683C;</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#33restful-设计的常见误区"><span class="toc-nav-number">3.3.</span> <span class="toc-nav-text">3.3RESTful &#x8BBE;&#x8BA1;&#x7684;&#x5E38;&#x89C1;&#x8BEF;&#x533A;</span></a></li></ol></li></ol>
+        
+        </div>
+      </aside>
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#spring" title="spring">spring</a>
+                        
+                          <a class="tag" href="/tags/#SSM" title="SSM">SSM</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://blog.csdn.net/qq_40705355" target="_blank">CSDN Blog 赵先生</a></li>
+                    
+                        <li><a href="https://github.com/huweihuang" target="_blank">Github 赵先生</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+<!-- chrome Firefox 中文锚点定位失效-->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<!-- smooth scroll behavior polyfill  -->
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script>
+        $('#toc').on('click','a',function(a){
+            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
+            // console.log(window.navigator.userAgent,isChrome)
+                // if(isChrome) {
+                    // console.log(a.currentTarget.outerHTML);
+                    // console.log($(a.currentTarget).attr("href"));
+                    //跳转到指定锚点
+                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
+                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
+                // }
+        })  
+</script>
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+
+
+                
+                <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                <!--Valine 的核心代码库:-->
+                <script src="../../js/Valine.min.js"></script>
+
+                <div class="comment"></div>
+                <script>
+                    new Valine({
+                        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+                        av: AV,
+                        el: '.comment', // 
+                        notify: true, // 邮件提醒!!!
+                        verify: true, // 验证码
+                        app_id: 'aPeCQXmvnRjGpLqsHsTQ38nT-gzGzoHsz', // 这里填写上面得到的APP ID
+                        app_key: 'ou0HF5y2Gu9oPP28sFN3ndGt', // 这里填写上面得到的APP KEY
+                        placeholder: '欢迎留言评论' // [v1.0.7 new]留言框占位提示文字
+                    });
+                </script>
+                
+
+
+    
+                <ul class="list-inline text-center">
+                    
+                
+                
+
+                
+
+                
+
+                
+                <li>
+                    <a target="_blank" href="https://github.com/huweihuang">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+                
+
+                
+
+                </ul>
+
+
+                <p class="copyright text-muted">
+
+                    
+                    <!-- 不蒜子统计 -->
+                    <span id="busuanzi_container_site_uv" style='display:none'>
+                        本站访客数<span id="busuanzi_value_site_uv"></span>人
+                    </span>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    
+
+                    Copyright &copy; 赵先生 2019
+                    <br>
+                    Theme by <a href="http://beantech.org">BeanTech</a>
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span>
+                    re-Ported by <a href="https://huweihuang.github.io/">赵先生</a> |
+                    <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px"
+                        height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huweihuang&repo=hexo-theme-huweihuang&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+        var d = document, t = 'script',
+            o = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+        o.src = u;
+        if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+        s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if ($('#tag_cloud').length !== 0) {
+        async("http://www.huweihuang.com/js/jquery.tagcloud.js", function () {
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: { start: '#bbbbee', end: '#0085a1' },
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+        var $nav = document.querySelector("nav");
+        if ($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = 'xxx';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?" + _baId;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+<!-- Image to hack wechat -->
+<img src="http://www.huweihuang.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
