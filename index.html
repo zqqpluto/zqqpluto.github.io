@@ -135,14 +135,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -256,38 +256,35 @@ Install Node.js  and Git
 
 <div class="post-preview">
 
-    <a href="/article/2019-08-16-手动安装MySQL和彻底删除MySQL/">
+    <a href="/article/hexo-BeanTech/">
         <h2 class="post-title">
                                  
-            手动安装MySQL和彻底删除MySQL
+            hexo+BeanTech主题增加站点访问量和文章访问量
         </h2>
         <h3 class="post-subtitle">
-            spring学习
+            BeanTech添加访问量
         </h3>
         <div class="post-content-preview">
-            一、手动安装mysql（5.6版本）
-1.下载压缩包，在官网下载。官网MySQL链接
-也可以使用我分享的网盘链接（5.6.17）
-链接：https://pan.baidu.com/s/1W4v5MafWiEze8S1IO0ishQ
-提取码：xc2y
-复制这段内容后打开百度网盘手机App，操作更方便哦
-2.解压后打开里面的my-default.ini配置文件
+            
 
-3.将文件basedir和dat......
+配置是否开启不蒜子访问量统计功能
+在themes/yilia/_config.yml添加属性
+123# 是否开启访问量统计功能(不蒜子)busuanzi: enable: true
+
+
+引入不蒜子并添加站点访问量
+在themes/yilia/layout/_partial/footer.ejs合适位置添加如下代码
+1234567&lt;% if (theme.busuanzi &amp;......
         </div>
     </a>
     
         <p class="post-meta" style="margin: 10px 0;">
             Posted by 赵先生 on
-            2019-08-16
+            2019-08-17
         </p>
         <div class="tags">
             
-              <a href="/tags/#spring" title="spring">spring</a>
-            
-              <a href="/tags/#SSM" title="SSM">SSM</a>
-            
-              <a href="/tags/#java" title="java">java</a>
+              <a href="/tags/#hexo" title="hexo">hexo</a>
             
         </div>
     
@@ -297,22 +294,31 @@ Install Node.js  and Git
 
 <div class="post-preview">
 
-    <a href="/article/spring-spring/">
+    <a href="/article/2019-08-16-使用python进行文本替换（包括替换文件名、文件夹名、文本名）/">
         <h2 class="post-title">
                                  
-            SSM框架学习（二）————Spring
+            使用python进行文本替换（包括替换文件名、文件夹名、文本名）
         </h2>
         <h3 class="post-subtitle">
             spring学习
         </h3>
         <div class="post-content-preview">
-            
-这是SSM系列框架学习的基础。
+            一、需求分析
+总体概述：替换
 
-一.Spring简介
-我们一般说 Spring 框架指的都是 Spring Framework，Spring是一个开源框架，Spring是于2003年兴起的一个轻量级的Java开发框架，由Rod Johnson在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来。
+文件名称的替换
 
-1.Sprin......
+如果文件夹或文本文件（各类后缀文件）的名称中存在某个字符串，则将他替换为另外的字符串。
+
+文件内容的替换
+
+如果文本文件（各类后缀文件）的内容中存在某个字符串，则将他替换为另外的字符串。
+
+二、细节要点
+需要替换的是给定文件夹下面的所有文件。
+
+
+文件是多层级的。（文件夹下面有文件夹有各类文本文件，级数不确定，文件个数有多有少，这里我们就需要......
         </div>
     </a>
     
@@ -322,11 +328,7 @@ Install Node.js  and Git
         </p>
         <div class="tags">
             
-              <a href="/tags/#spring" title="spring">spring</a>
-            
-              <a href="/tags/#SSM" title="SSM">SSM</a>
-            
-              <a href="/tags/#java" title="java">java</a>
+              <a href="/tags/#python" title="python">python</a>
             
         </div>
     
@@ -336,21 +338,67 @@ Install Node.js  and Git
 
 <div class="post-preview">
 
-    <a href="/article/spring-springmvc/">
+    <a href="/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">
         <h2 class="post-title">
                                  
-            SSM框架学习（三）————SpringMVC
+            python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）
         </h2>
         <h3 class="post-subtitle">
-            springmvc学习
+            python爬虫
         </h3>
         <div class="post-content-preview">
-            一.MVC模式
-mvc模式这里不作讲述，请参考：SSM框架学习(一)——SSM框架简介
+            一、观察url及要爬取的数据
 
-二.Sring Web MVC简介及工作流程
-2.1 Spring Web MVC简介
-Spring Web MVC是Spring框架一个非常重要的模块之一，其采用了MVC架构模式的思想，将web层进行职责解耦，便于我们简单、快速开发出MVC结构的Web程序，并且它的API还封装了Web开发中的一些常见......
+
+
+URL后面跟着a-index.html，我们再点开几个几面，发现它的链接后缀都是“小写字母-index.html”的格式结尾的，随意我们姜后缀链接进行构造拼接，将最终的URL拼接好后存储到一个容器。
+接下来我们对数据分析，经过观察后发现所有的数据我们都是需要的，没有不需要的数据。（如果有无用的数，那么我们在爬取数据的时候就不爬取这一项）
+在爬取的过程中发现......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#xpath" title="xpath">xpath</a>
+            
+              <a href="/tags/#selenium" title="selenium">selenium</a>
+            
+              <a href="/tags/#python" title="python">python</a>
+            
+              <a href="/tags/#爬虫" title="爬虫">爬虫</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/spring-SSM/">
+        <h2 class="post-title">
+                                 
+            SSM框架学习（一）————SSM框架简介
+        </h2>
+        <h3 class="post-subtitle">
+            SSM框架简介
+        </h3>
+        <div class="post-content-preview">
+            
+java这是SSM框架简介
+
+一.SSM 框架简介
+SSM（Spring+SpringMVC+MyBatis）框架由 Spring、MyBatis 两个框架整合完成（SpringMVC 是 Spring 中的部分内容）。采用标准 MVC 模式。
+
+spring MVC：负责请求的转发和视图管理。
+spring ：实现业务对象管理。
+mybatis ：作为数据对象的持久化引擎。
+
+1.1 S......
         </div>
     </a>
     
@@ -406,26 +454,24 @@ Spring采用某种特定的异常，如：SQLException，统一转换成自己�
 
 <div class="post-preview">
 
-    <a href="/article/spring-SSM/">
+    <a href="/article/2019-08-16-手动安装MySQL和彻底删除MySQL/">
         <h2 class="post-title">
                                  
-            SSM框架学习（一）————SSM框架简介
+            手动安装MySQL和彻底删除MySQL
         </h2>
         <h3 class="post-subtitle">
-            SSM框架简介
+            mysql手动安装
         </h3>
         <div class="post-content-preview">
-            
-java这是SSM框架简介
+            一、手动安装mysql（5.6版本）
+1.下载压缩包，在官网下载。官网MySQL链接
+也可以使用我分享的网盘链接（5.6.17）
+链接：https://pan.baidu.com/s/1W4v5MafWiEze8S1IO0ishQ
+提取码：xc2y
+复制这段内容后打开百度网盘手机App，操作更方便哦
+2.解压后打开里面的my-default.ini配置文件
 
-一.SSM 框架简介
-SSM（Spring+SpringMVC+MyBatis）框架由 Spring、MyBatis 两个框架整合完成（SpringMVC 是 Spring 中的部分内容）。采用标准 MVC 模式。
-
-spring MVC：负责请求的转发和视图管理。
-spring ：实现业务对象管理。
-mybatis ：作为数据对象的持久化引擎。
-
-1.1 S......
+3.将文件basedir和dat......
         </div>
     </a>
     
@@ -438,6 +484,8 @@ mybatis ：作为数据对象的持久化引擎。
               <a href="/tags/#spring" title="spring">spring</a>
             
               <a href="/tags/#SSM" title="SSM">SSM</a>
+            
+              <a href="/tags/#java" title="java">java</a>
             
         </div>
     
@@ -526,31 +574,27 @@ python环境安装配置：安装python所需要的环境（此处就不详细�
 
 <div class="post-preview">
 
-    <a href="/article/2019-08-16-使用python进行文本替换（包括替换文件名、文件夹名、文本名）/">
+    <a href="/article/spring-MyBatis/">
         <h2 class="post-title">
                                  
-            使用python进行文本替换（包括替换文件名、文件夹名、文本名）
+            SSM框架学习（五）——MyBatis
         </h2>
         <h3 class="post-subtitle">
             spring学习
         </h3>
         <div class="post-content-preview">
-            一、需求分析
-总体概述：替换
+            
+mybatis学习
 
-文件名称的替换
+一.Mybatis
+1.1 Mybatis简介
 
-如果文件夹或文本文件（各类后缀文件）的名称中存在某个字符串，则将他替换为另外的字符串。
+Mybatis支持SQL查询、存储过程和高级映射的持久层框架，MyBatis消除了几乎所有的JDBC代码和参数的手工设置以及结果检索，Mybatis使用简单的XML或注解用于配置和映射，将接口和java的pojo	映射成数据库记录。
 
-文件内容的替换
-
-如果文本文件（各类后缀文件）的内容中存在某个字符串，则将他替换为另外的字符串。
-
-二、细节要点
-需要替换的是给定文件夹下面的所有文件。
+1.2 Mybatis功能层次结构
 
 
-文件是多层级的。（文件夹下面有文件夹有各类文本文件，级数不确定，文件个数有多有少，这里我们就需要......
+API接口层：提供外部使用的接口API，开发......
         </div>
     </a>
     
@@ -560,42 +604,13 @@ python环境安装配置：安装python所需要的环境（此处就不详细�
         </p>
         <div class="tags">
             
-              <a href="/tags/#python" title="python">python</a>
+              <a href="/tags/#spring" title="spring">spring</a>
             
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">
-        <h2 class="post-title">
-                                 
-            手动安装MySQL和彻底删除MySQL
-        </h2>
-        <h3 class="post-subtitle">
-            spring学习
-        </h3>
-        <div class="post-content-preview">
-            一、观察url及要爬取的数据
-
-
-
-URL后面跟着a-index.html，我们再点开几个几面，发现它的链接后缀都是“小写字母-index.html”的格式结尾的，随意我们姜后缀链接进行构造拼接，将最终的URL拼接好后存储到一个容器。
-接下来我们对数据分析，经过观察后发现所有的数据我们都是需要的，没有不需要的数据。（如果有无用的数，那么我们在爬取数据的时候就不爬取这一项）
-在爬取的过程中发现......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 赵先生 on
-            2019-08-16
-        </p>
-        <div class="tags">
+              <a href="/tags/#SSM" title="SSM">SSM</a>
             
-              <a href="/tags/#mysql" title="mysql">mysql</a>
+              <a href="/tags/#java" title="java">java</a>
+            
+              <a href="/tags/#mybatis" title="mybatis">mybatis</a>
             
         </div>
     
@@ -646,6 +661,16 @@ URL后面跟着a-index.html，我们再点开几个几面，发现它的链接�
             
         
             
+        
+            
+            <a href="/tags/#python" title="python" rel="3">python</a>
+            
+        
+            
+            <a href="/tags/#爬虫" title="爬虫" rel="2">爬虫</a>
+            
+        
+            
             <a href="/tags/#spring" title="spring" rel="6">spring</a>
             
         
@@ -661,10 +686,6 @@ URL后面跟着a-index.html，我们再点开几个几面，发现它的链接�
         
             
         
-            
-        
-            
-            <a href="/tags/#python" title="python" rel="2">python</a>
             
         
             
@@ -724,23 +745,23 @@ URL后面跟着a-index.html，我们再点开几个几面，发现它的链接�
     <ul>
       
         <li>
+          <a href="/article/hexo-BeanTech/">hexo+BeanTech主题增加站点访问量和文章访问量</a>
+        </li>
+      
+        <li>
+          <a href="/article/2019-08-16-手动安装MySQL和彻底删除MySQL/">手动安装MySQL和彻底删除MySQL</a>
+        </li>
+      
+        <li>
+          <a href="/article/2019-08-16-使用python进行文本替换（包括替换文件名、文件夹名、文本名）/">使用python进行文本替换（包括替换文件名、文件夹名、文本名）</a>
+        </li>
+      
+        <li>
+          <a href="/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）</a>
+        </li>
+      
+        <li>
           <a href="/article/spring-SSM/">SSM框架学习（一）————SSM框架简介</a>
-        </li>
-      
-        <li>
-          <a href="/article/spring-MyBatis/">SSM框架学习（五）——MyBatis</a>
-        </li>
-      
-        <li>
-          <a href="/article/spring-spring/">SSM框架学习（二）————Spring</a>
-        </li>
-      
-        <li>
-          <a href="/article/spring-springmvc/">SSM框架学习（三）————SpringMVC</a>
-        </li>
-      
-        <li>
-          <a href="/article/spring-SpringJDBC/">SSM框架学习（四）——SpringJDBC</a>
         </li>
       
     </ul>
@@ -765,7 +786,7 @@ URL后面跟着a-index.html，我们再点开几个几面，发现它的链接�
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li></ul>
     </div>
 
         <hr>
