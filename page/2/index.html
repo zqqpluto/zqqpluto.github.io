@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          hexo+BeanTech主题增加站点访问量和文章访问量 - 赵先生
+          赵先生
         
     </title>
 
-    <link rel="canonical" href="https://zqqpluto.github.io/article/hexo-BeanTech/">
+    <link rel="canonical" href="https://zqqpluto.github.io/page/2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -70,8 +70,8 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header {
-        background-image: url('/img/article_header/article_header.png')
-                /*post*/
+        background-image: url('/img/header_img/home.jpg')
+                /*config*/
                 
     }
 
@@ -85,22 +85,10 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
-                    <div class="post-heading">
-                        <div class="tags">
-                            
-                            <a class="tag" href="/tags/#hexo"
-                                title="hexo">hexo</a>
-                            
-                        </div>
-                        <h1>hexo+BeanTech主题增加站点访问量和文章访问量</h1>
-                        <h2 class="subheading">BeanTech添加访问量</h2>
-                        <span class="meta"  id="busuanzi_container_page_pv" >
-                            Posted by 赵先生 on
-                            2019-08-17   
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-                        </span>
-
-                       
+                    <div class="site-heading">
+                        <h1>赵先生</h1>
+                        <!--<hr class="small">-->
+                        <span class="subheading">曾经沧海难为水 ，除却巫山不是云</span>
 
                     </div>
                     
@@ -207,214 +195,329 @@
 
 
     <!-- Main Content -->
-    <!-- Modify by Yu-Hsuan Yen -->
+    <!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Post Container -->
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+            
+                <!-- Main Content -->
 
-                <ol>
-<li>
-<p><strong>配置是否开启不蒜子访问量统计功能</strong></p>
-<p>在<code>themes/yilia/_config.yml</code>添加属性</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 是否开启访问量统计功能(不蒜子)</span></span><br><span class="line"><span class="attr">busuanzi:</span></span><br><span class="line"><span class="attr"> enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<h5 id="引入不蒜子并添加站点访问量">引入不蒜子并添加站点访问量</h5>
-<p>在<code>themes/yilia/layout/_partial/footer.ejs</code>合适位置添加如下代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.busuanzi &amp;&amp; theme.busuanzi.enable)&#123; %&gt;</span><br><span class="line">	&lt;!-- 不蒜子统计 --&gt;</span><br><span class="line">	&lt;span id=&quot;busuanzi_container_site_uv&quot; style=&apos;display:none&apos;&gt;</span><br><span class="line">		本站访客数&lt;span id=&quot;busuanzi_value_site_uv&quot;&gt;&lt;/span&gt;人</span><br><span class="line">	&lt;/span&gt;</span><br><span class="line">	&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="../spring-spring/Snipaste_2019-08-17_12-20-02.png" alt=""></p>
-<p><img src="../spring-spring/Snipaste_2019-08-17_12-23-27.png" alt=""></p>
-</li>
-<li>
-<p>添加文章访问量</p>
-<p>在文件<code>themes/yilia/layout/_partial/header.ejs</code>合适位置添加代码：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_container_page_pv"</span>&gt;</span></span><br><span class="line">  本文总阅读量<span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"busuanzi_value_page_pv"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span>次</span><br><span class="line"><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>我这里是在原来到标签内部作了改动，只要id一致就不会有问题。</p>
-<p><img src="../spring-spring/Snipaste_2019-08-17_12-29-21.png" alt=""></p>
-<p>效果如下图：</p>
-<p><img src="../spring-spring/Snipaste_2019-08-17_12-30-56.png" alt=""></p>
-</li>
-</ol>
 
-                
+<div class="post-preview">
 
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    
-                        <li class="previous">
-                            <a href="/article/hexo评论/" data-toggle="tooltip" data-placement="top" title="hexo+BeanTexh+Valine实现评论功能">&larr; Previous Post</a>
-                        </li>
-                    
-                    
-                        <li class="next">
-                            <a href="/article/2019-08-16-使用python进行文本替换（包括替换文件名、文件夹名、文本名）/" data-toggle="tooltip" data-placement="top" title="使用python进行文本替换（包括替换文件名、文件夹名、文本名）">Next Post &rarr;</a>
-                        </li>
-                    
-                </ul>
+    <a href="/article/spring-SSM整合/">
+        <h2 class="post-title">
+                                 
+            SSM框架学习（六）——SSM整合
+        </h2>
+        <h3 class="post-subtitle">
+            spring学习
+        </h3>
+        <div class="post-content-preview">
+            一.Maven
+Maven提供了仓库的概念，让这些依赖放进仓库中，并且maven还会将和该jar包有相关依赖的jar包也都导入项目。
+
+Maven安装配置请参考：Maven详解（二）------ Maven的安装配置
+
+pom.xml文件描述了maven项目的基本信息，一个最简单的pom.xml文件至少需要包含四个元素：modelVersion, groupId, artiffactId 和......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#SSM" title="SSM">SSM</a>
+            
+              <a href="/tags/#java" title="java">java</a>
+            
+              <a href="/tags/#maven" title="maven">maven</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/spring-spring/">
+        <h2 class="post-title">
+                                 
+            SSM框架学习（二）————Spring
+        </h2>
+        <h3 class="post-subtitle">
+            spring学习
+        </h3>
+        <div class="post-content-preview">
+            
+这是SSM系列框架学习的基础。
+
+一.Spring简介
+我们一般说 Spring 框架指的都是 Spring Framework，Spring是一个开源框架，Spring是于2003年兴起的一个轻量级的Java开发框架，由Rod Johnson在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来。
+
+1.Sprin......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#spring" title="spring">spring</a>
+            
+              <a href="/tags/#SSM" title="SSM">SSM</a>
+            
+              <a href="/tags/#java" title="java">java</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/2019-08-16-使用python进行文本替换（包括替换文件名、文件夹名、文本名）/">
+        <h2 class="post-title">
+                                 
+            使用python进行文本替换（包括替换文件名、文件夹名、文本名）
+        </h2>
+        <h3 class="post-subtitle">
+            spring学习
+        </h3>
+        <div class="post-content-preview">
+            一、需求分析
+总体概述：替换
+
+文件名称的替换
+
+如果文件夹或文本文件（各类后缀文件）的名称中存在某个字符串，则将他替换为另外的字符串。
+
+文件内容的替换
+
+如果文本文件（各类后缀文件）的内容中存在某个字符串，则将他替换为另外的字符串。
+
+二、细节要点
+需要替换的是给定文件夹下面的所有文件。
+
+
+文件是多层级的。（文件夹下面有文件夹有各类文本文件，级数不确定，文件个数有多有少，这里我们就需要......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#python" title="python">python</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+        <li class="previous">
+            <a href="/">&larr; Newer Posts</a>
+        </li>
+    
+    
+</ul>
+
+
 
                 <br>
 
-                <!--打赏-->
-                
-                <!--打赏-->
-
-                <br>
-                <!--分享-->
-                
-                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
-                    <!--  css & js -->
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
-                
-                <!--分享-->
-                <br>                       
-                
                 <!-- require APlayer -->
                 
 
-                <!-- duoshuo Share start -->
+                <!-- 如果开启评论功能 -->
                 
-                <!-- 多说 Share end-->
-
-                <!-- 多说评论框 start -->
-                
-                <!-- 多说评论框 end -->
-
-                <!-- disqus comment start -->
-                
-                <!-- disqus comment end -->
-
-                
-
             </div>
+
+          <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Featured Tags -->
+
+<section>
+    <!-- no hr -->
+    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
             
-            <!-- Tabe of Content -->
-            <!-- Table of Contents -->
-
-  
-    <style>
-      span.toc-nav-number{
-        display: none
-      }
-    </style>
-  
-    
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#引入不蒜子并添加站点访问量"><span class="toc-nav-number">1.</span> <span class="toc-nav-text">&#x5F15;&#x5165;&#x4E0D;&#x849C;&#x5B50;&#x5E76;&#x6DFB;&#x52A0;&#x7AD9;&#x70B9;&#x8BBF;&#x95EE;&#x91CF;</span></a></li></ol>
+            
         
-        </div>
-      </aside>
-    
-
-                
-            <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-                <section>
-                    <!-- no hr -->
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                       
-                          <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
-                        
-                    </div>
-                </section>
-                
-
-                <!-- Friends Blog -->
-                
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-
-                    
-                        <li><a href="https://blog.csdn.net/qq_40705355" target="_blank">CSDN Blog 赵先生</a></li>
-                    
-                        <li><a href="https://github.com/zqqpluto" target="_blank">Github 赵先生</a></li>
-                    
-                </ul>
-                
-            </div>
-        </div>
+            
+        
+            
+            <a href="/tags/#python" title="python" rel="3">python</a>
+            
+        
+            
+            <a href="/tags/#爬虫" title="爬虫" rel="2">爬虫</a>
+            
+        
+            
+            <a href="/tags/#hexo" title="hexo" rel="2">hexo</a>
+            
+        
+            
+            <a href="/tags/#spring" title="spring" rel="6">spring</a>
+            
+        
+            
+            <a href="/tags/#SSM" title="SSM" rel="7">SSM</a>
+            
+        
+            
+            <a href="/tags/#java" title="java" rel="4">java</a>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     </div>
-</article>
+</section>
 
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+    <h5><a href="/about/">ABOUT ME</a></h5>
+    <div class="short-about">
 
+        
+            <img id = "avatar_pic" src="/img/avatar/Snipaste_2019-08-16_17-31-36.png" />
+        
 
+        
+            <p>You are my girle....</p>
+        
 
+        <!-- SNS Link -->
+        <ul class="list-inline">
+            
+            
+            
 
+            
 
+            
 
+            
+                <li>
+                    <a target="_blank"  href="https://github.com/zqqpluto">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            
+            
+            
+            
+        </ul>
+    </div>
+</section>
 
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'hover',
-          placement: 'left',
-          icon: 'ℬ'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
-        }
-    }
-</style>
+        <hr>
+    
+        
+  <h5>RECENT POSTS</h3>
+  <div class="widget">
+    <ul>
+      
+        <li>
+          <a href="/article/hexo评论/">hexo+BeanTexh+Valine实现评论功能</a>
+        </li>
+      
+        <li>
+          <a href="/article/hexo-BeanTech/">hexo+BeanTech主题增加站点访问量和文章访问量</a>
+        </li>
+      
+        <li>
+          <a href="/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）</a>
+        </li>
+      
+        <li>
+          <a href="/article/2019-08-16-手动安装MySQL和彻底删除MySQL/">手动安装MySQL和彻底删除MySQL</a>
+        </li>
+      
+        <li>
+          <a href="/article/spring-SpringJDBC/">SSM框架学习（四）——SpringJDBC</a>
+        </li>
+      
+    </ul>
+  </div>
 
+        <hr>
+    
+        <!-- Friends Blog -->
 
-<!-- chrome Firefox 中文锚点定位失效-->
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-<!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-                // if(isChrome) {
-                    // console.log(a.currentTarget.outerHTML);
-                    // console.log($(a.currentTarget).attr("href"));
-                    //跳转到指定锚点
-                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
-                // }
-        })  
-</script>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+
+    
+        <li><a href="https://blog.csdn.net/qq_40705355" target="_blank">CSDN Blog 赵先生</a></li>
+    
+        <li><a href="https://github.com/zqqpluto" target="_blank">Github 赵先生</a></li>
+    
+</ul>
+
+        <hr>
+    
+        
+    <h5>ARCHIVES</h5>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+
+        <hr>
+    
+</div>
+
+        
+    </div>
+</div>
 
 
     <!-- Footer -->
@@ -428,24 +531,6 @@
 
 
 
-                
-                <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-                <!--Valine 的核心代码库:-->
-                <script src="../../js/Valine.min.js"></script>
-
-                <div class="comment"></div>
-                <script>
-                    new Valine({
-                        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-                        av: AV,
-                        el: '.comment', // 
-                        notify: true, // 邮件提醒!!!
-                        verify: true, // 验证码
-                        app_id: 'aPeCQXmvnRjGpLqsHsTQ38nT-gzGzoHsz', // 这里填写上面得到的APP ID
-                        app_key: 'ou0HF5y2Gu9oPP28sFN3ndGt', // 这里填写上面得到的APP KEY
-                        placeholder: '欢迎留言评论' // [v1.0.7 new]留言框占位提示文字
-                    });
-                </script>
                 
 
 
