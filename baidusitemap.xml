@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://zqqpluto.xyz/article/spring-SSM/</loc>
+    <lastmod>2019-08-23</lastmod>
+  </url>  <url>
     <loc>http://zqqpluto.xyz/article/hexo-BeanTech/</loc>
     <lastmod>2019-08-23</lastmod>
   </url>  <url>
@@ -29,9 +32,6 @@
     <lastmod>2019-08-17</lastmod>
   </url>  <url>
     <loc>http://zqqpluto.xyz/article/%E7%88%AC%E5%8F%96%E4%B8%80%E5%91%A8%E5%A4%A9%E6%B0%94%E9%A2%84%E6%8A%A5/</loc>
-    <lastmod>2019-08-17</lastmod>
-  </url>  <url>
-    <loc>http://zqqpluto.xyz/article/spring-SSM/</loc>
     <lastmod>2019-08-17</lastmod>
   </url>  <url>
     <loc>http://zqqpluto.xyz/article/2019-08-16-%E4%BD%BF%E7%94%A8python%E8%BF%9B%E8%A1%8C%E6%96%87%E6%9C%AC%E6%9B%BF%E6%8D%A2%EF%BC%88%E5%8C%85%E6%8B%AC%E6%9B%BF%E6%8D%A2%E6%96%87%E4%BB%B6%E5%90%8D%E3%80%81%E6%96%87%E4%BB%B6%E5%A4%B9%E5%90%8D%E3%80%81%E6%96%87%E6%9C%AC%E5%90%8D%EF%BC%89/</loc>
