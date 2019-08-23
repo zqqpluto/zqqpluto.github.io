@@ -1,7 +1,7 @@
 http://zqqpluto.xyz/article/hexo评论/
 http://zqqpluto.xyz/article/hexo-BeanTech/
+http://zqqpluto.xyz/article/2019-08-16-使用python进行文本替换（包括替换文件名、文件夹名、文本名）/
 http://zqqpluto.xyz/article/2019-08-16-手动安装MySQL和彻底删除MySQL/
-http://zqqpluto.xyz/article/spring-springmvc/
 http://zqqpluto.xyz/article/spring-SSM/
 http://zqqpluto.xyz/article/spring-SpringJDBC/
 http://zqqpluto.xyz/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/
@@ -9,4 +9,4 @@ http://zqqpluto.xyz/article/spring-SSM整合/
 http://zqqpluto.xyz/article/爬取一周天气预报/
 http://zqqpluto.xyz/article/spring-MyBatis/
 http://zqqpluto.xyz/article/spring-spring/
-http://zqqpluto.xyz/article/2019-08-16-使用python进行文本替换（包括替换文件名、文件夹名、文本名）/
+http://zqqpluto.xyz/article/spring-springmvc/
