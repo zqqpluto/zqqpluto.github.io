@@ -135,6 +135,13 @@
 
                         
                         <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
                             <a href="/archive/">Archives</a>
                         </li>
                         
@@ -143,13 +150,6 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
-                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -232,14 +232,12 @@ Leancloud配置
 
 
 
-
-
 进入应用-&gt;设置-&gt;应用key
 
 
 
 下载Valine.min.js
-首先下载最新的Valine.mi......
+首先下载最新的Valine.min.......
         </div>
     </a>
     
@@ -336,6 +334,47 @@ Leancloud配置
         <div class="tags">
             
               <a href="/tags/#python" title="python">python</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">
+        <h2 class="post-title">
+                                 
+            python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）
+        </h2>
+        <h3 class="post-subtitle">
+            python爬虫
+        </h3>
+        <div class="post-content-preview">
+            一、观察url及要爬取的数据
+
+
+
+URL后面跟着a-index.html，我们再点开几个几面，发现它的链接后缀都是“小写字母-index.html”的格式结尾的，随意我们姜后缀链接进行构造拼接，将最终的URL拼接好后存储到一个容器。
+接下来我们对数据分析，经过观察后发现所有的数据我们都是需要的，没有不需要的数据。（如果有无用的数，那么我们在爬取数据的时候就不爬取这一项）
+在爬取的过程中发现......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#xpath" title="xpath">xpath</a>
+            
+              <a href="/tags/#selenium" title="selenium">selenium</a>
+            
+              <a href="/tags/#python" title="python">python</a>
+            
+              <a href="/tags/#爬虫" title="爬虫">爬虫</a>
             
         </div>
     
@@ -461,47 +500,6 @@ Spring采用某种特定的异常，如：SQLException，统一转换成自己�
 
 <div class="post-preview">
 
-    <a href="/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">
-        <h2 class="post-title">
-                                 
-            python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）
-        </h2>
-        <h3 class="post-subtitle">
-            python爬虫
-        </h3>
-        <div class="post-content-preview">
-            一、观察url及要爬取的数据
-
-
-
-URL后面跟着a-index.html，我们再点开几个几面，发现它的链接后缀都是“小写字母-index.html”的格式结尾的，随意我们姜后缀链接进行构造拼接，将最终的URL拼接好后存储到一个容器。
-接下来我们对数据分析，经过观察后发现所有的数据我们都是需要的，没有不需要的数据。（如果有无用的数，那么我们在爬取数据的时候就不爬取这一项）
-在爬取的过程中发现......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 赵先生 on
-            2019-08-16
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#xpath" title="xpath">xpath</a>
-            
-              <a href="/tags/#selenium" title="selenium">selenium</a>
-            
-              <a href="/tags/#python" title="python">python</a>
-            
-              <a href="/tags/#爬虫" title="爬虫">爬虫</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
-<div class="post-preview">
-
     <a href="/article/spring-SSM整合/">
         <h2 class="post-title">
                                  
@@ -581,22 +579,27 @@ python环境安装配置：安装python所需要的环境（此处就不详细�
 
 <div class="post-preview">
 
-    <a href="/article/spring-spring/">
+    <a href="/article/spring-MyBatis/">
         <h2 class="post-title">
                                  
-            SSM框架学习（二）————Spring
+            SSM框架学习（五）——MyBatis
         </h2>
         <h3 class="post-subtitle">
             spring学习
         </h3>
         <div class="post-content-preview">
             
-这是SSM系列框架学习的基础。
+mybatis学习
 
-一.Spring简介
-我们一般说 Spring 框架指的都是 Spring Framework，Spring是一个开源框架，Spring是于2003年兴起的一个轻量级的Java开发框架，由Rod Johnson在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来。
+一.Mybatis
+1.1 Mybatis简介
 
-1.Sprin......
+Mybatis支持SQL查询、存储过程和高级映射的持久层框架，MyBatis消除了几乎所有的JDBC代码和参数的手工设置以及结果检索，Mybatis使用简单的XML或注解用于配置和映射，将接口和java的pojo	映射成数据库记录。
+
+1.2 Mybatis功能层次结构
+
+
+API接口层：提供外部使用的接口API，开发......
         </div>
     </a>
     
@@ -611,6 +614,8 @@ python环境安装配置：安装python所需要的环境（此处就不详细�
               <a href="/tags/#SSM" title="SSM">SSM</a>
             
               <a href="/tags/#java" title="java">java</a>
+            
+              <a href="/tags/#mybatis" title="mybatis">mybatis</a>
             
         </div>
     
@@ -659,18 +664,6 @@ python环境安装配置：安装python所需要的环境（此处就不详细�
     <div class="tags">
         
             
-            <a href="/tags/#spring" title="spring" rel="6">spring</a>
-            
-        
-            
-            <a href="/tags/#SSM" title="SSM" rel="7">SSM</a>
-            
-        
-            
-            <a href="/tags/#java" title="java" rel="4">java</a>
-            
-        
-            
         
             
         
@@ -680,6 +673,18 @@ python环境安装配置：安装python所需要的环境（此处就不详细�
         
             
             <a href="/tags/#爬虫" title="爬虫" rel="2">爬虫</a>
+            
+        
+            
+            <a href="/tags/#spring" title="spring" rel="6">spring</a>
+            
+        
+            
+            <a href="/tags/#SSM" title="SSM" rel="7">SSM</a>
+            
+        
+            
+            <a href="/tags/#java" title="java" rel="4">java</a>
             
         
             
@@ -761,11 +766,11 @@ python环境安装配置：安装python所需要的环境（此处就不详细�
         </li>
       
         <li>
-          <a href="/article/spring-SSM/">SSM框架学习（一）————SSM框架简介</a>
+          <a href="/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）</a>
         </li>
       
         <li>
-          <a href="/article/spring-SpringJDBC/">SSM框架学习（四）——SpringJDBC</a>
+          <a href="/article/spring-SSM/">SSM框架学习（一）————SSM框架简介</a>
         </li>
       
     </ul>
