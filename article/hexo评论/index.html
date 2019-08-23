@@ -88,11 +88,11 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                            <a class="tag" href="/tags/#Valine"
-                                title="Valine">Valine</a>
-                            
                             <a class="tag" href="/tags/#hexo"
                                 title="hexo">hexo</a>
+                            
+                            <a class="tag" href="/tags/#Valine"
+                                title="Valine">Valine</a>
                             
                             <a class="tag" href="/tags/#BeanTech"
                                 title="BeanTech">BeanTech</a>
@@ -160,14 +160,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -247,7 +247,7 @@
 </li>
 </ol>
 <p>在<code>thems\你的主题\layout\_partial\footer.ejs</code>下面添加到合适位置</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (is_post()) &#123; %&gt;</span><br><span class="line">                &lt;script src=<span class="string">"//cdn1.lncld.net/static/js/3.0.4/av-min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">                &lt;!--Valine 的核心代码库:--&gt;</span><br><span class="line">                &lt;script src=<span class="string">"../../js/Valine.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"comment"</span>&gt;&lt;/div&gt;</span><br><span class="line">                &lt;script&gt;</span><br><span class="line">                    <span class="keyword">new</span> Valine(&#123;</span><br><span class="line">                        <span class="comment">// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)</span></span><br><span class="line">                        av: AV,</span><br><span class="line">                        el: <span class="string">'.comment'</span>, <span class="comment">// </span></span><br><span class="line">                        notify: <span class="literal">true</span>, <span class="comment">// 邮件提醒!!!</span></span><br><span class="line">                        verify: <span class="literal">true</span>, <span class="comment">// 验证码</span></span><br><span class="line">                        app_id: <span class="string">'xxxxxx'</span>, <span class="comment">// 这里填写上面得到的APP ID</span></span><br><span class="line">                        app_key: <span class="string">'xxxxxxx'</span>, <span class="comment">// 这里填写上面得到的APP KEY</span></span><br><span class="line">                        placeholder: <span class="string">'欢迎留言评论'</span> <span class="comment">// [v1.0.7 new]留言框占位提示文字</span></span><br><span class="line">                    &#125;);</span><br><span class="line">                &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">                &lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (is_post()) &#123; %&gt;</span><br><span class="line">                &lt;script src=<span class="string">"//cdn1.lncld.net/static/js/3.0.4/av-min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">                &lt;!--Valine 的核心代码库:--&gt;</span><br><span class="line">                &lt;script src=<span class="string">"../../js/Valine.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"comment"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">                &lt;script&gt;</span><br><span class="line">                    <span class="keyword">new</span> Valine(&#123;</span><br><span class="line">                        <span class="comment">// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)</span></span><br><span class="line">                        av: AV,</span><br><span class="line">                        el: <span class="string">'.comment'</span>, <span class="comment">// </span></span><br><span class="line">                        notify: <span class="literal">true</span>, <span class="comment">// 邮件提醒!!!</span></span><br><span class="line">                        verify: <span class="literal">true</span>, <span class="comment">// 验证码</span></span><br><span class="line">                        app_id: <span class="string">'xxxxxx'</span>, <span class="comment">// 这里填写上面得到的APP ID</span></span><br><span class="line">                        app_key: <span class="string">'xxxxxxx'</span>, <span class="comment">// 这里填写上面得到的APP KEY</span></span><br><span class="line">                        placeholder: <span class="string">'欢迎留言评论'</span> <span class="comment">// [v1.0.7 new]留言框占位提示文字</span></span><br><span class="line">                    &#125;);</span><br><span class="line">                &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">                &lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>&lt;% if (is_post()) { %&gt;  &lt;% } %&gt;表示是否在文章页面的判断，不是则不会显示评论框。</p>
 </blockquote>
@@ -345,9 +345,9 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#Valine" title="Valine">Valine</a>
-                        
                           <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
+                        
+                          <a class="tag" href="/tags/#Valine" title="Valine">Valine</a>
                         
                           <a class="tag" href="/tags/#BeanTech" title="BeanTech">BeanTech</a>
                         
