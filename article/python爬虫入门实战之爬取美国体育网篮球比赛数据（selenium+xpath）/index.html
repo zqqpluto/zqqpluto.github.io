@@ -18,7 +18,7 @@
         
     </title>
 
-    <link rel="canonical" href="http://zqqpluto.xyz/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">
+    <link rel="canonical" href="http://zqqpluto.xyz/article/python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -227,7 +227,7 @@
                 post-container">
 
                 <h2 id="一-观察url及要爬取的数据">一、观察url及要爬取的数据</h2>
-<p><img src="//zqqpluto.xyz/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/spring-spring/20190118164515834.png" alt="img"></p>
+<p><img src="//zqqpluto.xyz/article/python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/20190118164515834.png" alt="img"></p>
 <blockquote>
 <ol>
 <li>URL后面跟着a-index.html，我们再点开几个几面，发现它的链接后缀都是“小写字母-index.html”的格式结尾的，随意我们姜后缀链接进行构造拼接，将最终的URL拼接好后存储到一个容器。</li>
@@ -236,13 +236,13 @@
 </ol>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 构造链接尾部方法 </span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getUrls</span><span class="params">(self,head_url)</span>:</span></span><br><span class="line">        urls = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">97</span>,<span class="number">123</span>):</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">120</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                url = head_url</span><br><span class="line">                url += chr(i)+<span class="string">'-index.html'</span></span><br><span class="line">                urls.append(url)</span><br><span class="line">        <span class="keyword">return</span> urls</span><br></pre></td></tr></table></figure>
-<p><img src="//zqqpluto.xyz/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/spring-spring/201901181657438.png" alt="img"></p>
+<p><img src="//zqqpluto.xyz/article/python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/201901181657438.png" alt="img"></p>
 <p>需要注意的是在爬取数据的时候不要把这种无用的数据爬取下来</p>
 <h2 id="二-对网页结构进行分析">二、对网页结构进行分析</h2>
 <p>按F12查看网页代码，找到要爬取的数据不放呢。不难发现要爬取的数据都在tbody里边。</p>
-<p><img src="//zqqpluto.xyz/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/spring-spring/20190118170216406.png" alt="img"></p>
+<p><img src="//zqqpluto.xyz/article/python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/20190118170216406.png" alt="img"></p>
 <p>接下来我们查看要爬取的数据在具体哪一个标签内部，找到每一个tr内部的标签，不难发现每一个td都对应了一个数据，不同的是有两个数据是是在td标签下的a标签里面。</p>
-<p><img src="//zqqpluto.xyz/article/2019-08-16-python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/spring-spring/20190118170749690.png" alt="img"></p>
+<p><img src="//zqqpluto.xyz/article/python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/20190118170749690.png" alt="img"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">trTags = tree.xpath(<span class="string">'//tr[@data-row and not(@class)]'</span>)<span class="comment">#通过xpath寻找有用的数据，</span></span><br><span class="line">            <span class="keyword">for</span> tag <span class="keyword">in</span> trTags:</span><br><span class="line">                <span class="keyword">try</span>:</span><br><span class="line">                    item = []</span><br><span class="line">                    <span class="comment">#xpath找出的是列表，故要在后面加[0]，不然结果会有[]号</span></span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./th[1]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    <span class="comment"># 这个数据是存在a标签内部的</span></span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[1]/a/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[2]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[3]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[4]/a/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[5]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[6]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[7]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[8]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[9]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[10]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[11]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[12]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[13]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    item.append(tag.xpath(<span class="string">'./td[14]/text()'</span>)[<span class="number">0</span>])</span><br><span class="line">                    items.append(item)</span><br><span class="line">                    item = []</span><br><span class="line">                <span class="keyword">except</span>:</span><br><span class="line">                    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 <h2 id="三-数据爬取">三、数据爬取</h2>
 <p>在爬取数据的时候我开始使用的是Requests进行请求响应，但是之后我解析的时候发现得到的代码里面没有我需要的数据，这个问题我查询是因为这种网页是js动态导入的，对于这种我的解决办法是使用第三方包selenium进行网页的自动测试。</p>
@@ -256,7 +256,7 @@
                 <ul class="pager">
                     
                         <li class="previous">
-                            <a href="/article/2019-08-16-使用python进行文本替换（包括替换文件名、文件夹名、文本名）/" data-toggle="tooltip" data-placement="top" title="使用python进行文本替换（包括替换文件名、文件夹名、文本名）">&larr; Previous Post</a>
+                            <a href="/article/hexo-BeanTech/" data-toggle="tooltip" data-placement="top" title="hexo+BeanTech主题增加站点访问量和文章访问量">&larr; Previous Post</a>
                         </li>
                     
                     
