@@ -14,11 +14,11 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <title>
         
-          hexo+BeanTexh+Valine实现评论功能 - 赵先生
+          赵先生
         
     </title>
 
-    <link rel="canonical" href="http://zqqpluto.xyz/article/hexo评论/">
+    <link rel="canonical" href="http://zqqpluto.xyz/archives/2/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -70,8 +70,8 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header {
-        background-image: url('/img/article_header/article_header.png')
-                /*post*/
+        background-image: url('/img/header_img/home.jpg')
+                /*config*/
                 
     }
 
@@ -85,28 +85,10 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     
-                    <div class="post-heading">
-                        <div class="tags">
-                            
-                            <a class="tag" href="/tags/#hexo"
-                                title="hexo">hexo</a>
-                            
-                            <a class="tag" href="/tags/#Valine"
-                                title="Valine">Valine</a>
-                            
-                            <a class="tag" href="/tags/#BeanTech"
-                                title="BeanTech">BeanTech</a>
-                            
-                        </div>
-                        <h1>hexo+BeanTexh+Valine实现评论功能</h1>
-                        <h2 class="subheading">Valine留言</h2>
-                        <span class="meta"  id="busuanzi_container_page_pv" >
-                            Posted by 赵先生 on
-                            2019-08-17   
-                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 本文总阅读量<span id="busuanzi_value_page_pv"></span>次
-                        </span>
-
-                       
+                    <div class="site-heading">
+                        <h1>赵先生</h1>
+                        <!--<hr class="small">-->
+                        <span class="subheading">曾经沧海难为水 ，除却巫山不是云</span>
 
                     </div>
                     
@@ -210,233 +192,377 @@
 
 
     <!-- Main Content -->
-    <!-- Modify by Yu-Hsuan Yen -->
+    <!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Post Container -->
+<!-- USE SIDEBAR -->
+    <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
+            
+                <!-- Main Content -->
 
-                <blockquote>
-<p>基于hexo的主题BeanTech的Valine评论功能实现。</p>
-</blockquote>
-<ol>
-<li>
-<h3 id="leancloud配置"><strong>Leancloud配置</strong></h3>
-<p>首先访问Leancloud官网<code>https://leancloud.cn/</code>有Github账号的小伙伴可以用Github账号进行登陆然后绑定邮箱就可以啦！<br>
-进入之后点击创建应用</p>
-</li>
-</ol>
-<p><img src="//zqqpluto.xyz/article/hexo评论/1417438-20180829183719819-1803830937.png" alt=""></p>
-<p><strong>进入应用-&gt;设置-&gt;应用key</strong></p>
-<p><img src="//zqqpluto.xyz/article/hexo评论/1417438-20180829183737375-2083035798.png" alt=""></p>
-<ol start="2">
-<li>
-<h3 id="下载valineminjs"><strong>下载Valine.min.js</strong></h3>
-<p>首先下载最新的<code>Valine.min.js</code>核心代码库到本地（下面是链接）<br>
-<code>https://cdn.jsdelivr.net/npm/valine@1.1.9-beta9/dist/</code><br>
-右击<code>Valine.min.js</code>选择链接另存为即可,我这里将其放在<code>主题\source\js</code>下面的。</p>
-</li>
-<li>
-<h3 id="留言的配置"><strong>留言的配置</strong></h3>
-</li>
-</ol>
-<p>在<code>thems\你的主题\layout\_partial\footer.ejs</code>下面添加到合适位置</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (is_post()) &#123; %&gt;</span><br><span class="line">                &lt;script src=<span class="string">"//cdn1.lncld.net/static/js/3.0.4/av-min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">                &lt;!--Valine 的核心代码库:--&gt;</span><br><span class="line">                &lt;script src=<span class="string">"../../js/Valine.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">                &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"comment"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">                &lt;script&gt;</span><br><span class="line">                    <span class="keyword">new</span> Valine(&#123;</span><br><span class="line">                        <span class="comment">// AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)</span></span><br><span class="line">                        av: AV,</span><br><span class="line">                        el: <span class="string">'.comment'</span>, <span class="comment">// </span></span><br><span class="line">                        notify: <span class="literal">true</span>, <span class="comment">// 邮件提醒!!!</span></span><br><span class="line">                        verify: <span class="literal">true</span>, <span class="comment">// 验证码</span></span><br><span class="line">                        app_id: <span class="string">'xxxxxx'</span>, <span class="comment">// 这里填写上面得到的APP ID</span></span><br><span class="line">                        app_key: <span class="string">'xxxxxxx'</span>, <span class="comment">// 这里填写上面得到的APP KEY</span></span><br><span class="line">                        placeholder: <span class="string">'欢迎留言评论'</span> <span class="comment">// [v1.0.7 new]留言框占位提示文字</span></span><br><span class="line">                    &#125;);</span><br><span class="line">                &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">                &lt;% &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>&lt;% if (is_post()) { %&gt;  &lt;% } %&gt;表示是否在文章页面的判断，不是则不会显示评论框。</p>
-</blockquote>
-<ol start="4">
-<li>
-<h3 id="开启邮箱通知"><strong>开启邮箱通知</strong></h3>
-<p>进入<code>Leancloud</code>&gt;选择你的评论所存放的<code>应用</code>&gt;设置&gt;<code>邮件模板</code>，按下图设置好<code>用于重置密码的邮件主题</code>&gt;然后<code>保存</code>:</p>
-<blockquote>
-<p><strong>注</strong>：请注意修改链接为你的<code>博客</code>或者<code>网站首页</code>。</p>
-</blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>Hi, &#123;&#123;username&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">你在 &#123;&#123;appname&#125;&#125; 的评论收到了新的回复，请点击查看：</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"你的网址首页链接"</span> <span class="attr">style</span>=<span class="string">"display: inline-block; padding: 10px 20px; border-radius: 4px; background-color: #3090e4; color: #fff; text-decoration: none;"</span>&gt;</span>马上查看<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
 
-                
+<div class="post-preview">
 
-                <hr>
-                <!-- Pager -->
-                <ul class="pager">
-                    
-                        <li class="previous">
-                            <a href="/article/SpringBoot入门/" data-toggle="tooltip" data-placement="top" title="Spring Boot入门">&larr; Previous Post</a>
-                        </li>
-                    
-                    
-                        <li class="next">
-                            <a href="/article/hexo-BeanTech/" data-toggle="tooltip" data-placement="top" title="hexo+BeanTech主题增加站点访问量和文章访问量">Next Post &rarr;</a>
-                        </li>
-                    
-                </ul>
+    <a href="/article/爬取一周天气预报/">
+        <h2 class="post-title">
+            
+                <i class="fa fa-thumb-tack" style="color:#F4711F" ></i>
+                <!-- <i class="fa fa-thumb-tack" style="color:#F89E8C" ></i> -->
+                <!-- <i class="fa fa-thumb-tack" style="color:#1CB7ED" ></i> -->
+                <font color=#F4711F>置顶</font>
+                <!-- <font color=#F89E8C>置顶</font>  -->
+                <!-- <font color=#1CB7ED>置顶</font>  -->
+                                 
+            Python爬虫入门实战--------一周天气预报爬取
+        </h2>
+        <h3 class="post-subtitle">
+            spring学习
+        </h3>
+        <div class="post-content-preview">
+            
+最近学校刚开始开设爬虫课，我也刚刚如入门，尝试写了一个爬去成都市的一周的天气预报。
+
+
+一、软件和库的准备：
+
+
+python环境安装配置：安装python所需要的环境（此处就不详细的进行说明了，百度查询），最好是使用python3.x版本，虽然现在大部分公司的项目都还是在使用2.x版本，但是3.x才是目前主流的，以后的项目肯定使用3.x居多。
+
+
+编辑器：选择一个合适的编辑器，pytho......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#python" title="python">python</a>
+            
+              <a href="/tags/#爬虫" title="爬虫">爬虫</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/spring-MyBatis/">
+        <h2 class="post-title">
+                                 
+            SSM框架学习（五）——MyBatis
+        </h2>
+        <h3 class="post-subtitle">
+            spring学习
+        </h3>
+        <div class="post-content-preview">
+            
+mybatis学习
+
+一.Mybatis
+1.1 Mybatis简介
+
+Mybatis支持SQL查询、存储过程和高级映射的持久层框架，MyBatis消除了几乎所有的JDBC代码和参数的手工设置以及结果检索，Mybatis使用简单的XML或注解用于配置和映射，将接口和java的pojo	映射成数据库记录。
+
+1.2 Mybatis功能层次结构
+
+
+API接口层：提供外部使用的接口API，开发......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#spring" title="spring">spring</a>
+            
+              <a href="/tags/#SSM" title="SSM">SSM</a>
+            
+              <a href="/tags/#java" title="java">java</a>
+            
+              <a href="/tags/#mybatis" title="mybatis">mybatis</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/spring-spring/">
+        <h2 class="post-title">
+                                 
+            SSM框架学习（二）————Spring
+        </h2>
+        <h3 class="post-subtitle">
+            spring学习
+        </h3>
+        <div class="post-content-preview">
+            
+这是SSM系列框架学习的基础。
+
+一.Spring简介
+我们一般说 Spring 框架指的都是 Spring Framework，Spring是一个开源框架，Spring是于2003年兴起的一个轻量级的Java开发框架，由Rod Johnson在其著作Expert One-On-One J2EE Development and Design中阐述的部分理念和原型衍生而来。
+
+1.Sprin......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#spring" title="spring">spring</a>
+            
+              <a href="/tags/#SSM" title="SSM">SSM</a>
+            
+              <a href="/tags/#java" title="java">java</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
+    <a href="/article/spring-springmvc/">
+        <h2 class="post-title">
+                                 
+            SSM框架学习（三）————SpringMVC
+        </h2>
+        <h3 class="post-subtitle">
+            springmvc学习
+        </h3>
+        <div class="post-content-preview">
+            一.MVC模式
+mvc模式这里不作讲述，请参考：SSM框架学习(一)——SSM框架简介
+
+二.Sring Web MVC简介及工作流程
+2.1 Spring Web MVC简介
+Spring Web MVC是Spring框架一个非常重要的模块之一，其采用了MVC架构模式的思想，将web层进行职责解耦，便于我们简单、快速开发出MVC结构的Web程序，并且它的API还封装了Web开发中的一些常见......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-16
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#spring" title="spring">spring</a>
+            
+              <a href="/tags/#SSM" title="SSM">SSM</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+
+
+<!-- Pager -->
+
+<ul class="pager">
+    
+        <li class="previous">
+            <a href="/">&larr; Newer Posts</a>
+        </li>
+    
+    
+</ul>
+
+
 
                 <br>
 
-                <!--打赏-->
-                
-                <!--打赏-->
-
-                <br>
-                <!--分享-->
-                
-                    <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
-                    <!--  css & js -->
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
-                    <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
-                
-                <!--分享-->
-                <br>                       
-                
                 <!-- require APlayer -->
                 
 
-                <!-- duoshuo Share start -->
+                <!-- 如果开启评论功能 -->
                 
-                <!-- 多说 Share end-->
-
-                <!-- 多说评论框 start -->
-                
-                <!-- 多说评论框 end -->
-
-                <!-- disqus comment start -->
-                
-                <!-- disqus comment end -->
-
-                
-
             </div>
+
+          <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Featured Tags -->
+
+<section>
+    <!-- no hr -->
+    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
             
-            <!-- Tabe of Content -->
-            <!-- Table of Contents -->
-
-  
-    <style>
-      span.toc-nav-number{
-        display: none
-      }
-    </style>
-  
-    
-      <aside id="sidebar">
-        <div id="toc" class="toc-article">
-        <strong class="toc-title">Contents</strong>
+            <a href="/tags/#hexo" title="hexo" rel="3">hexo</a>
+            
         
-          <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#leancloud配置"><span class="toc-nav-number">1.</span> <span class="toc-nav-text"><strong>Leancloud&#x914D;&#x7F6E;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#下载valineminjs"><span class="toc-nav-number">2.</span> <span class="toc-nav-text"><strong>&#x4E0B;&#x8F7D;Valine.min.js</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#留言的配置"><span class="toc-nav-number">3.</span> <span class="toc-nav-text"><strong>&#x7559;&#x8A00;&#x7684;&#x914D;&#x7F6E;</strong></span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#开启邮箱通知"><span class="toc-nav-number">4.</span> <span class="toc-nav-text"><strong>&#x5F00;&#x542F;&#x90AE;&#x7BB1;&#x901A;&#x77E5;</strong></span></a></li></ol>
+            
         
-        </div>
-      </aside>
-    
-
-                
-            <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                
-                <section>
-                    <!-- no hr -->
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-                       
-                          <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
-                        
-                          <a class="tag" href="/tags/#Valine" title="Valine">Valine</a>
-                        
-                          <a class="tag" href="/tags/#BeanTech" title="BeanTech">BeanTech</a>
-                        
-                    </div>
-                </section>
-                
-
-                <!-- Friends Blog -->
-                
-                <hr>
-                <h5>FRIENDS</h5>
-                <ul class="list-inline">
-
-                    
-                        <li><a href="https://blog.csdn.net/qq_40705355" target="_blank">CSDN Blog 赵先生</a></li>
-                    
-                        <li><a href="https://github.com/zqqpluto" target="_blank">Github 赵先生</a></li>
-                    
-                </ul>
-                
-            </div>
-        </div>
+            
+        
+            
+        
+            
+        
+            
+            <a href="/tags/#python" title="python" rel="3">python</a>
+            
+        
+            
+            <a href="/tags/#爬虫" title="爬虫" rel="2">爬虫</a>
+            
+        
+            
+            <a href="/tags/#spring" title="spring" rel="6">spring</a>
+            
+        
+            
+            <a href="/tags/#SSM" title="SSM" rel="7">SSM</a>
+            
+        
+            
+        
+            
+            <a href="/tags/#java" title="java" rel="4">java</a>
+            
+        
+            
+        
+            
+        
+            
+        
     </div>
-</article>
+</section>
 
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+    <h5><a href="/about/">ABOUT ME</a></h5>
+    <div class="short-about">
 
+        
+            <img id = "avatar_pic" src="/img/avatar/Snipaste_2019-08-16_17-31-36.png" />
+        
 
+        
+            <p>You are my girle....</p>
+        
 
+        <!-- SNS Link -->
+        <ul class="list-inline">
+            
+            
+            
 
+            
 
+            
 
+            
+                <li>
+                    <a target="_blank"  href="https://github.com/zqqpluto">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                        </span>
+                    </a>
+                </li>
+            
+            
+            
+            
+        </ul>
+    </div>
+</section>
 
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'hover',
-          placement: 'left',
-          icon: 'ℬ'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
-        }
-    }
-</style>
+        <hr>
+    
+        
+  <h5>RECENT POSTS</h3>
+  <div class="widget">
+    <ul>
+      
+        <li>
+          <a href="/article/hexo实现图片单击放大缩小/">hexo实现图片单击放大缩小</a>
+        </li>
+      
+        <li>
+          <a href="/article/SpringBoot入门/">Spring Boot入门</a>
+        </li>
+      
+        <li>
+          <a href="/article/hexo评论/">hexo+BeanTexh+Valine实现评论功能</a>
+        </li>
+      
+        <li>
+          <a href="/article/hexo-BeanTech/">hexo+BeanTech主题增加站点访问量和文章访问量</a>
+        </li>
+      
+        <li>
+          <a href="/article/spring-SSM/">SSM框架学习（一）————SSM框架简介</a>
+        </li>
+      
+    </ul>
+  </div>
 
+        <hr>
+    
+        <!-- Friends Blog -->
 
-<!-- chrome Firefox 中文锚点定位失效-->
-<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
-<!-- smooth scroll behavior polyfill  -->
-<script type="text/javascript" src="/js/smoothscroll.js"></script>
-<script>
-        $('#toc').on('click','a',function(a){
-            // var isChrome = window.navigator.userAgent.indexOf("Chrome") !== -1;
-            // console.log(window.navigator.userAgent,isChrome)
-                // if(isChrome) {
-                    // console.log(a.currentTarget.outerHTML);
-                    // console.log($(a.currentTarget).attr("href"));
-                    //跳转到指定锚点
-                    // document.getElementById(a.target.innerText.toLowerCase()).scrollIntoView(true);
-                    document.getElementById($(a.currentTarget).attr("href").replace("#","")).scrollIntoView({behavior: 'smooth' });
-                // }
-        })  
-</script>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+
+    
+        <li><a href="https://blog.csdn.net/qq_40705355" target="_blank">CSDN Blog 赵先生</a></li>
+    
+        <li><a href="https://github.com/zqqpluto" target="_blank">Github 赵先生</a></li>
+    
+</ul>
+
+        <hr>
+    
+        
+    <h5>ARCHIVES</h5>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">14</span></li></ul>
+    </div>
+
+        <hr>
+    
+</div>
+
+        
+    </div>
+</div>
 
 
     <!-- Footer -->
@@ -450,25 +576,6 @@
 
 
 
-                
-                <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-                <!--Valine 的核心代码库:-->
-                <script src="../../js/Valine.min.js"></script>
-<script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-                <div class="comment"></div>
-                <script>
-                    new Valine({
-                        // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
-                        av: AV,
-                        el: '.comment', // 
-                        notify: false, // 邮件提醒!!!
-                        verify: false, // 验证码
-                        app_id: 'aPeCQXmvnRjGpLqsHsTQ38nT-gzGzoHsz', // 这里填写上面得到的APP ID
-                        app_key: 'ou0HF5y2Gu9oPP28sFN3ndGt', // 这里填写上面得到的APP KEY
-                        placeholder: '欢迎留言评论' // [v1.0.7 new]留言框占位提示文字
-                    });
-					
-                </script>
                 
 
 
