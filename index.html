@@ -135,14 +135,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -503,6 +503,37 @@ Leancloud配置
 
 <div class="post-preview">
 
+    <a href="/article/hexo实现图片单击放大缩小/">
+        <h2 class="post-title">
+                                 
+            hexo实现图片单击放大缩小
+        </h2>
+        <h3 class="post-subtitle">
+            hexo主题修改
+        </h3>
+        <div class="post-content-preview">
+            对应不同的主题需要修改一下东西，我的主题是BeanTech。
+在合适的位置添加一下js代码，我是在themes\BeanTech\layout\_partial添加的。
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606......
+        </div>
+    </a>
+    
+        <p class="post-meta" style="margin: 10px 0;">
+            Posted by 赵先生 on
+            2019-08-25
+        </p>
+        <div class="tags">
+            
+              <a href="/tags/#hexo" title="hexo">hexo</a>
+            
+        </div>
+    
+
+</div>
+<hr>
+
+<div class="post-preview">
+
     <a href="/article/spring-SpringJDBC/">
         <h2 class="post-title">
                                  
@@ -617,47 +648,6 @@ pom.xml文件描述了maven项目的基本信息，一个最简单的pom.xml文�
 </div>
 <hr>
 
-<div class="post-preview">
-
-    <a href="/article/python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/">
-        <h2 class="post-title">
-                                 
-            python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）
-        </h2>
-        <h3 class="post-subtitle">
-            python爬虫
-        </h3>
-        <div class="post-content-preview">
-            一、观察url及要爬取的数据
-
-
-
-URL后面跟着a-index.html，我们再点开几个几面，发现它的链接后缀都是“小写字母-index.html”的格式结尾的，随意我们姜后缀链接进行构造拼接，将最终的URL拼接好后存储到一个容器。
-接下来我们对数据分析，经过观察后发现所有的数据我们都是需要的，没有不需要的数据。（如果有无用的数，那么我们在爬取数据的时候就不爬取这一项）
-在爬取的过程中发现......
-        </div>
-    </a>
-    
-        <p class="post-meta" style="margin: 10px 0;">
-            Posted by 赵先生 on
-            2019-08-16
-        </p>
-        <div class="tags">
-            
-              <a href="/tags/#xpath" title="xpath">xpath</a>
-            
-              <a href="/tags/#selenium" title="selenium">selenium</a>
-            
-              <a href="/tags/#python" title="python">python</a>
-            
-              <a href="/tags/#爬虫" title="爬虫">爬虫</a>
-            
-        </div>
-    
-
-</div>
-<hr>
-
 
 
 <!-- Pager -->
@@ -699,19 +689,11 @@ URL后面跟着a-index.html，我们再点开几个几面，发现它的链接�
     <div class="tags">
         
             
-            <a href="/tags/#hexo" title="hexo" rel="2">hexo</a>
+            <a href="/tags/#hexo" title="hexo" rel="3">hexo</a>
             
         
             
         
-            
-        
-            
-            <a href="/tags/#spring" title="spring" rel="6">spring</a>
-            
-        
-            
-            <a href="/tags/#SSM" title="SSM" rel="7">SSM</a>
             
         
             
@@ -724,6 +706,14 @@ URL后面跟着a-index.html，我们再点开几个几面，发现它的链接�
         
             
             <a href="/tags/#爬虫" title="爬虫" rel="2">爬虫</a>
+            
+        
+            
+            <a href="/tags/#spring" title="spring" rel="6">spring</a>
+            
+        
+            
+            <a href="/tags/#SSM" title="SSM" rel="7">SSM</a>
             
         
             
@@ -791,6 +781,10 @@ URL后面跟着a-index.html，我们再点开几个几面，发现它的链接�
     <ul>
       
         <li>
+          <a href="/article/hexo实现图片单击放大缩小/">hexo实现图片单击放大缩小</a>
+        </li>
+      
+        <li>
           <a href="/article/SpringBoot入门/">Spring Boot入门</a>
         </li>
       
@@ -800,10 +794,6 @@ URL后面跟着a-index.html，我们再点开几个几面，发现它的链接�
       
         <li>
           <a href="/article/hexo-BeanTech/">hexo+BeanTech主题增加站点访问量和文章访问量</a>
-        </li>
-      
-        <li>
-          <a href="/article/手动安装MySQL和彻底删除MySQL/">手动安装MySQL和彻底删除MySQL</a>
         </li>
       
         <li>
@@ -832,7 +822,7 @@ URL后面跟着a-index.html，我们再点开几个几面，发现它的链接�
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">14</span></li></ul>
     </div>
 
         <hr>
@@ -1067,25 +1057,17 @@ setTimeout(function(){
         function createCover(src,_this) {
             console.log(_this);
             console.log(src);
-            var cover = $("<div id='outerDiv' class='zhao-cover-img-container' style='position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:5;width:100%;height:100%;display:none;'><div id='innerDiv' style='position:absolute;'><img class='zhao-cover-img' id='bigImg' style='border:5px solid #fff;' src=''/></div></div>");
-            imgShow("#outerDiv", "#innerDiv", "#bigImg", _this,src);
-
-            
+            var cover = $("<div id='outerDiv'  style='position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:5;width:100%;height:100%;display:none;'><div id='innerDiv' style='position:absolute;'><img  id='bigImg' style='border:5px solid #fff;' src=''/></div></div>");
             $("#outerDiv").remove();
             $("body").append(cover);
-            $("body").addClass("zhao-no-scroll");
-            $("#outerDiv").click(function () {
-                $("#outerDiv").remove();
-                $("body").removeClass("zhao-no-scroll");
-            })
+            imgShow("#outerDiv", "#innerDiv", "#bigImg", _this,src);
+
         }
     }
     function imgShow(outerDiv, innerDiv, bigImg, _this,src) {
-        console.log("****");
-        console(src);
-        console.log("****");
         //var src = _this.attr("src"); //获取当前点击的common-img元素中的src属性
         $(bigImg).attr("src", src); //设置#bigImg元素的src属性
+
         /*获取当前点击图片的真实大小，并显示弹出层及大图*/
         $("<img/>").attr("src", src).load(function () {
             var windowW = $(window).width(); //获取当前窗口宽度
@@ -1113,6 +1095,7 @@ setTimeout(function(){
             var w = (windowW - imgWidth) / 2; //计算图片与窗口左边距
             var h = (windowH - imgHeight) / 2; //计算图片与窗口上边距
             $(innerDiv).css({ "top": h, "left": w }); //设置#innerDiv的top和left属性
+            //console.log('****')
             $(outerDiv).fadeIn("fast"); //淡入显示#outerDiv
         });
 
@@ -1135,6 +1118,9 @@ setTimeout(function(){
 <img src="http://zqqpluto.xyz/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/clipboard-use.js"></script>
 </body>
 
 </html>

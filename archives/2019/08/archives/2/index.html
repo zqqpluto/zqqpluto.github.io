@@ -135,14 +135,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -232,6 +232,21 @@
                  <li >
                     08-25
                     <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/article/hexo实现图片单击放大缩小/" style="color: #0085a1">
+                        <span>
+                            hexo实现图片单击放大缩小
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    08-25
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                     <a href="/article/SpringBoot入门/" style="color: #0085a1">
                         <span>
                             Spring Boot入门
@@ -277,21 +292,6 @@
                  <li >
                     08-16
                     <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                    <a href="/article/python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/" style="color: #0085a1">
-                        <span>
-                            python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）
-                        </span>
-                    </a>
-                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
-                </li>
-                
-                  <!-- <li class="listing-item">
-                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
-                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-                  </li> -->
-                 <li >
-                    08-16
-                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                     <a href="/article/spring-SSM整合/" style="color: #0085a1">
                         <span>
                             SSM框架学习（六）——SSM整合
@@ -325,6 +325,21 @@
                     <a href="/article/spring-SSM/" style="color: #0085a1">
                         <span>
                             SSM框架学习（一）————SSM框架简介
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    08-16
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/article/python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）/" style="color: #0085a1">
+                        <span>
+                            python爬虫入门实战之爬取美国体育网篮球比赛数据（selenium+xpath）
                         </span>
                     </a>
                     <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
@@ -475,19 +490,11 @@
     <div class="tags">
         
             
-            <a href="/tags/#hexo" title="hexo" rel="2">hexo</a>
+            <a href="/tags/#hexo" title="hexo" rel="3">hexo</a>
             
         
             
         
-            
-        
-            
-            <a href="/tags/#spring" title="spring" rel="6">spring</a>
-            
-        
-            
-            <a href="/tags/#SSM" title="SSM" rel="7">SSM</a>
             
         
             
@@ -500,6 +507,14 @@
         
             
             <a href="/tags/#爬虫" title="爬虫" rel="2">爬虫</a>
+            
+        
+            
+            <a href="/tags/#spring" title="spring" rel="6">spring</a>
+            
+        
+            
+            <a href="/tags/#SSM" title="SSM" rel="7">SSM</a>
             
         
             
@@ -567,6 +582,10 @@
     <ul>
       
         <li>
+          <a href="/article/hexo实现图片单击放大缩小/">hexo实现图片单击放大缩小</a>
+        </li>
+      
+        <li>
           <a href="/article/SpringBoot入门/">Spring Boot入门</a>
         </li>
       
@@ -576,10 +595,6 @@
       
         <li>
           <a href="/article/hexo-BeanTech/">hexo+BeanTech主题增加站点访问量和文章访问量</a>
-        </li>
-      
-        <li>
-          <a href="/article/手动安装MySQL和彻底删除MySQL/">手动安装MySQL和彻底删除MySQL</a>
         </li>
       
         <li>
@@ -608,7 +623,7 @@
         
     <h5>ARCHIVES</h5>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a><span class="archive-list-count">14</span></li></ul>
     </div>
 
         <hr>
@@ -843,25 +858,17 @@ setTimeout(function(){
         function createCover(src,_this) {
             console.log(_this);
             console.log(src);
-            var cover = $("<div id='outerDiv' class='zhao-cover-img-container' style='position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:5;width:100%;height:100%;display:none;'><div id='innerDiv' style='position:absolute;'><img class='zhao-cover-img' id='bigImg' style='border:5px solid #fff;' src=''/></div></div>");
-            imgShow("#outerDiv", "#innerDiv", "#bigImg", _this,src);
-
-            
+            var cover = $("<div id='outerDiv'  style='position:fixed;top:0;left:0;background:rgba(0,0,0,0.7);z-index:5;width:100%;height:100%;display:none;'><div id='innerDiv' style='position:absolute;'><img  id='bigImg' style='border:5px solid #fff;' src=''/></div></div>");
             $("#outerDiv").remove();
             $("body").append(cover);
-            $("body").addClass("zhao-no-scroll");
-            $("#outerDiv").click(function () {
-                $("#outerDiv").remove();
-                $("body").removeClass("zhao-no-scroll");
-            })
+            imgShow("#outerDiv", "#innerDiv", "#bigImg", _this,src);
+
         }
     }
     function imgShow(outerDiv, innerDiv, bigImg, _this,src) {
-        console.log("****");
-        console(src);
-        console.log("****");
         //var src = _this.attr("src"); //获取当前点击的common-img元素中的src属性
         $(bigImg).attr("src", src); //设置#bigImg元素的src属性
+
         /*获取当前点击图片的真实大小，并显示弹出层及大图*/
         $("<img/>").attr("src", src).load(function () {
             var windowW = $(window).width(); //获取当前窗口宽度
@@ -889,6 +896,7 @@ setTimeout(function(){
             var w = (windowW - imgWidth) / 2; //计算图片与窗口左边距
             var h = (windowH - imgHeight) / 2; //计算图片与窗口上边距
             $(innerDiv).css({ "top": h, "left": w }); //设置#innerDiv的top和left属性
+            //console.log('****')
             $(outerDiv).fadeIn("fast"); //淡入显示#outerDiv
         });
 
@@ -911,6 +919,9 @@ setTimeout(function(){
 <img src="http://zqqpluto.xyz/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
+<!-- 代码块复制功能 -->
+<script type="text/javascript" src="/js/clipboard.min.js"></script>  
+<script type="text/javascript" src="/js/clipboard-use.js"></script>
 </body>
 
 </html>
